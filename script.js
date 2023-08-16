@@ -76,5 +76,13 @@ const tabsContent = document.querySelectorAll('.operations__content');
 
 tabsContainer.addEventListener('click', function (e) {
   const cliked = e.target.closest('.operations__tab');
+
+  //guard cause
+  if (!cliked) return;
+
+  //activate tab
+  tabs.forEach(t => t.classList.remove('operations__tab--active'));
   cliked.classList.add('operations__tab--active');
+
+  //activate content area
 });
