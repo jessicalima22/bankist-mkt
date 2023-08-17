@@ -85,4 +85,8 @@ tabsContainer.addEventListener('click', function (e) {
   cliked.classList.add('operations__tab--active');
 
   //activate content area
+  tabsContent.forEach(c => c.classList.remove(`operations__content--active`));
+  document
+    .querySelector(`.operations__content--${cliked.dataset.tab}`)
+    .classList.add(`operations__content--active`);
 });
