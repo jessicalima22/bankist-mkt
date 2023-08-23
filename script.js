@@ -154,3 +154,23 @@ allSections.forEach(function (section) {
 });
 
 //lazy loading
+
+const imgTargets = document.querySelectorAll('img[data-src]');
+
+const loadImg = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+
+  //replace src with data-src
+
+  entry.target.src = entry.target.dataset.src;
+
+  //remove the class
+  entry.target.addEventListener('load', function () {});
+};
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+});
+
+imgTargets.forEach(img => imgObserver.observe(img));
