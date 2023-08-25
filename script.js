@@ -179,3 +179,21 @@ const imgObserver = new IntersectionObserver(loadImg, {
 });
 
 imgTargets.forEach(img => imgObserver.observe(img));
+
+//Slider
+
+const slides = document.querySelectorAll('.slide');
+slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i})%`));
+
+let currentSlide = 0;
+const maxSlide = slides.length;
+
+const btnLeft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
+
+btnRight.addEventListener('click', function () {
+  currentSlide++;
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - currentSlide)})%`)
+  );
+});
