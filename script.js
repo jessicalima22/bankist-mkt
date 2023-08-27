@@ -192,7 +192,11 @@ const btnLeft = document.querySelector('.slider__btn--left');
 const btnRight = document.querySelector('.slider__btn--right');
 
 btnRight.addEventListener('click', function () {
-  currentSlide++;
+  if (currentSlide === maxSlide - 1) {
+    currentSlide = 0;
+  } else {
+    currentSlide++;
+  }
   slides.forEach(
     (s, i) => (s.style.transform = `translateX(${100 * (i - currentSlide)})%`)
   );
