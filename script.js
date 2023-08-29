@@ -212,7 +212,11 @@ const nextSlide = function () {
   }
 
   const prevSlide = function () {
-    currentSlide--;
+    if (currentSlide === 0) {
+      currentSlide = maxSlide - 1;
+    } else {
+      currentSlide--;
+    }
     goToSlide(currentSlide);
   };
 };
