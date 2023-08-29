@@ -222,3 +222,5 @@ const nextSlide = function () {
 };
 btnRight.addEventListener('click', nextSlide);
 btnLeft.addEventListener('click', prevSlide);
+
+//commit
