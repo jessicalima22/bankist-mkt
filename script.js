@@ -189,7 +189,7 @@ const maxSlide = slides.length;
 
 const goToSlide = function () {
   slides.forEach(
-    (s, i) => (s.style.transform = `translateX(${100 * (i - currentSlide)})%`)
+    (s, i) => (s.style.transform = `translateX(${100 * (i - slide)})%`)
   );
 };
 
@@ -224,3 +224,5 @@ btnRight.addEventListener('click', nextSlide);
 btnLeft.addEventListener('click', prevSlide);
 
 //commit
+
+document.addEventListener('keydown', function (e) {});
