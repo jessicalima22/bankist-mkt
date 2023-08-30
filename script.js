@@ -205,7 +205,6 @@ const nextSlide = function () {
   } else {
     currentSlide++;
   }
-
   goToSlide(currentSlide);
 };
 
@@ -223,4 +222,7 @@ btnLeft.addEventListener('click', prevSlide);
 
 //commit
 
-document.addEventListener('keydown', function (e) {});
+document.addEventListener('keydown', function (e) {
+  e.key === 'ArrowLeft' && prevSlide();
+  e.key === 'ArrowRight' && nextSlide();
+});
